@@ -14,7 +14,7 @@ import static org.junit.Assert.assertFalse;
 public class AlloverCommerceStepDefinitions {
     MainPage mainPage = new MainPage();
 
-    @Given("user goes to the {string} site and logs in with valid information.")
+    @Given("user goes to the {string} website and logs in with valid information.")
     public void userGoesToTheSiteAndLogsInWithValidInformation(String url) {
 
         Driver.getDriver().get(ConfigReader.getProperties(url));

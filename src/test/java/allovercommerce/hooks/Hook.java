@@ -1,6 +1,9 @@
 package allovercommerce.hooks;
 
+import allovercommerce.pages.MainPage;
+import allovercommerce.utilities.ConfigReader;
 import allovercommerce.utilities.Driver;
+import allovercommerce.utilities.WaitUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -10,8 +13,30 @@ import org.openqa.selenium.TakesScreenshot;
 
 
 public class Hook {
-    @Before
-    public void setUp() throws Exception{
+   /* @Before
+    public void setUp(){
+        MainPage mainPage = new MainPage();
+        Driver.getDriver().get(ConfigReader.getProperties("allovercommerce"));
+        mainPage.homePage.signIn.click();
+        mainPage.loginPage.username.sendKeys(ConfigReader.getProperties("alloverUsername"));
+        mainPage.loginPage.password.sendKeys(ConfigReader.getProperties("alloverPassword"));
+        mainPage.loginPage.signInButton.click();
+        WaitUtils.waitFor(2);
+    }*/
+    @Before("@US06")
+    public void setUp1(Scenario scenario) throws Exception{
+        if (!scenario.getSourceTagNames().contains("@withoutSignIn")){
+            MainPage mainPage = new MainPage();
+            Driver.getDriver().get(ConfigReader.getProperties("allovercommerce"));
+            mainPage.homePage.signIn.click();
+            mainPage.loginPage.username.sendKeys(ConfigReader.getProperties("alloverUsername"));
+            mainPage.loginPage.password.sendKeys(ConfigReader.getProperties("alloverPassword"));
+            mainPage.loginPage.signInButton.click();
+            WaitUtils.waitFor(2);
+        }else {
+            Driver.getDriver().get(ConfigReader.getProperties("allovercommerce"));
+            WaitUtils.waitFor(2);
+        }
 
     }
 
