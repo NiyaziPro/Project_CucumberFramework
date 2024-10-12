@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"allovercommerce/step_definitions","allovercommerce/hooks"},
-        tags ="",
+        tags ="@US12",
         dryRun = false
 
 )

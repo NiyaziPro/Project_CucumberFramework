@@ -115,6 +115,7 @@ Feature: User Story 06 - User must be able to buy a product.
     And click Update Cart button
     Then verifies that the quantity of the product has increased.
 
+
   Scenario: TC014 - User must be able to enter a positive number for the quantity of products added to the cart.
     Given click on the search box
     When enter a "book"

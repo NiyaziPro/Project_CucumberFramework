@@ -14,16 +14,6 @@ import static org.junit.Assert.assertFalse;
 public class AlloverCommerceStepDefinitions {
     MainPage mainPage = new MainPage();
 
-    @Given("user goes to the {string} website and logs in with valid information.")
-    public void userGoesToTheSiteAndLogsInWithValidInformation(String url) {
-
-        Driver.getDriver().get(ConfigReader.getProperties(url));
-        mainPage.homePage.signIn.click();
-        mainPage.loginPage.username.sendKeys(ConfigReader.getProperties("alloverUsername"));
-        mainPage.loginPage.password.sendKeys(ConfigReader.getProperties("alloverPassword"));
-        mainPage.loginPage.signInButton.click();
-        WaitUtils.waitFor(2);
-    }
 
     @When("click on the search box")
     public void clickOnTheSearchBox() {
@@ -298,4 +288,6 @@ public class AlloverCommerceStepDefinitions {
     public void verifiesThatCanCompleteThePurchase() {
         Assert.assertTrue(mainPage.orderCompletePage.orderCompletedMsg.isDisplayed());
     }
+
+
 }
