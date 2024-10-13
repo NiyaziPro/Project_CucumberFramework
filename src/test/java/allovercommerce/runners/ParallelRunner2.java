@@ -12,13 +12,13 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-reports/cucumber2.xml",
                 "rerun:testOutput/failed_scenario2.txt",
 
-                "pretty", // console'da senaryolarla ilgili ayrintili bilgiler verir - Provides detailed information about scenarios in the console
+                "pretty",
 
 
         },
         features = "src/test/resources/features",
         glue = {"allovercommerce/step_definitions","allovercommerce/hooks"},
-        tags ="@US12",
+        tags ="@US18 or @US20",
         dryRun = false
 
 )

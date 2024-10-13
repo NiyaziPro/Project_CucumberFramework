@@ -135,7 +135,6 @@ Feature: User Story 20 - Vendor must be able to buy products with the created Co
     And click the Orders button
     Then verifies that the details of the purchase made can be seen.
 
-  @US20a
   Scenario: TC009 - You can shop as Vendor with the created Coupon.
     Given click the Sign out button
     When click the Orders button
