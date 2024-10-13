@@ -56,6 +56,23 @@ public class Hook {
 
     }
 
+    @Before("@US18")
+    public void setUp2(Scenario scenario) throws Exception{
+        if (!scenario.getSourceTagNames().contains("@withoutSignIn")){
+            MainPage mainPage = new MainPage();
+            Driver.getDriver().get(ConfigReader.getProperties("allovercommerce"));
+            mainPage.homePage.signIn.click();
+            mainPage.loginPage.username.sendKeys(ConfigReader.getProperties("vendorUsername"));
+            mainPage.loginPage.password.sendKeys(ConfigReader.getProperties("vendorPassword"));
+            mainPage.loginPage.signInButton.click();
+            WaitUtils.waitFor(2);
+        }else {
+            Driver.getDriver().get(ConfigReader.getProperties("allovercommerce"));
+            WaitUtils.waitFor(2);
+        }
+
+    }
+
 
 
 

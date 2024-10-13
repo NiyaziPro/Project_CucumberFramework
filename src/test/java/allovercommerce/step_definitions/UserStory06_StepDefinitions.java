@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 
-public class AlloverCommerceStepDefinitions {
+public class UserStory06_StepDefinitions {
     MainPage mainPage = new MainPage();
 
 

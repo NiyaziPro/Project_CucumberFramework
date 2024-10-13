@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class VendorStepDefinitions {
+public class UserStory12_StepDefinitions {
     MainPage mainPage = new MainPage();
 
     @Given("click the Sign out button")
@@ -206,4 +206,6 @@ public class VendorStepDefinitions {
             Assert.assertTrue(w.isDisplayed());
         }
     }
+
+
 }
