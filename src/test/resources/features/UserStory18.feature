@@ -1,5 +1,5 @@
 @US18
-Feature: "Vendor must be able to create Coupons (My Account - Coupons - Add New)"
+Feature: User Story 18 - Vendor must be able to create Coupons
 
   Scenario: TC001 - User must be able to write Code to create Coupons as a Vendor.
     Given click the Sign out button
@@ -41,6 +41,7 @@ Feature: "Vendor must be able to create Coupons (My Account - Coupons - Add New)
     And click on Coupons
     Then click the Add New button
     And enter a discount amount in the Coupon amount box: "20"
+    But wait 2 seconds
     Then verifies that can entered discount amount in the Coupon Amount box.
 
   Scenario: TC006 - When creating Coupons as a Vendor, user cannot enter letters in the Coupon Amount box.

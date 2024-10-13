@@ -131,6 +131,7 @@ public class UserStory06_StepDefinitions {
 
     @And("click on the Cart icon")
     public void clickOnTheCartIcon() {
+        ActionsUtils.scrollToElementUsingActions(mainPage.homePage.cart);
         mainPage.homePage.cart.click();
     }
 

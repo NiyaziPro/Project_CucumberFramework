@@ -6,7 +6,6 @@ import allovercommerce.utilities.BrowserUtils;
 import allovercommerce.utilities.Driver;
 import allovercommerce.utilities.WaitUtils;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -83,6 +82,7 @@ public class UserStory18_StepDefinitions {
     @And("enter a discount amount in the Coupon amount box: {string}")
     public void enterADiscountAmountInTheCouponAmountBox(String amount) {
         amountData=amount;
+        mainPage.vendorCouponsPage.couponAmountBox.clear();
         mainPage.vendorCouponsPage.couponAmountBox.sendKeys(amount, Keys.TAB);
     }
 
@@ -205,4 +205,6 @@ public class UserStory18_StepDefinitions {
     public void verifiesThatCannotCreateCouponByLeavingTheFieldsBlank() {
         Assert.assertTrue(mainPage.vendorCouponsPage.cancelledMessage.isDisplayed());
     }
+
+
 }

@@ -56,7 +56,7 @@ public class Hook {
 
     }
 
-    @Before("@US18")
+    @Before("@US18 or @US20")
     public void setUp2(Scenario scenario) throws Exception{
         if (!scenario.getSourceTagNames().contains("@withoutSignIn")){
             MainPage mainPage = new MainPage();
