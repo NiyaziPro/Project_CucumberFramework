@@ -1,7 +1,7 @@
 @US20
 Feature: User Story 20 - Vendor must be able to buy products with the created Coupons.
 
-  @parallelTest
+  @US20a @parallelTest
   Scenario: TC001 - User as a Vendor be able to select a product and add  to the cart.
     Given click the Sign out button
     And click the Orders button

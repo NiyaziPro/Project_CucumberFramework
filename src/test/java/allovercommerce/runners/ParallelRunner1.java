@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports1.html",
                 "json:target/json-reports/cucumber1.json",
                 "junit:target/xml-reports/cucumber1.xml",
-                "rerun:testOutput/failed_scenario1.txt",
+                "rerun:test-output/failed_scenario1.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:output/directory",
 
                 "pretty",
 
@@ -18,7 +19,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"allovercommerce/step_definitions","allovercommerce/hooks"},
-        tags ="@parallelTest",
+        tags ="@US20a",
         dryRun = false
 
 )

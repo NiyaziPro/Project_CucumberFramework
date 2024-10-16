@@ -7,19 +7,19 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
+                "pretty",
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-reports/cucumber.xml",
-                "rerun:testOutput/failed_scenario.txt",
-
-                "pretty", // console'da senaryolarla ilgili ayrintili bilgiler verir - Provides detailed information about scenarios in the console
-
+                "rerun:test-output/failed_scenario.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:output/directory",
         },
         features = "src/test/resources/features",
-        glue = {"allovercommerce/step_definitions","allovercommerce/hooks"},
-        tags ="@US20a",
+        glue = {"allovercommerce/step_definitions", "allovercommerce/hooks"},
+        tags = "@US20a",
         dryRun = false
 
 )
 
-public class Runner {}
+public class Runner {
+}
